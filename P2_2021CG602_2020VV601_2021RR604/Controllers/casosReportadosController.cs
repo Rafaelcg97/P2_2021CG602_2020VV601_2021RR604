@@ -22,5 +22,13 @@ namespace P2_2021CG602_2020VV601_2021RR604.Controllers
 
             return View();
         }
+
+        public IActionResult CrearRegistro(casosReportados nuevoCaso)
+        {
+            _parcialBDContext.Add(nuevoCaso);
+            _parcialBDContext.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
