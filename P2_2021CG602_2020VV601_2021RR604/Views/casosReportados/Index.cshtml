@@ -28,7 +28,7 @@
                     @Html.Label("lblGenero","Descripcion")
                 </div>
                 <div>
-                    @Html.DropDownList("idDepartamento", ViewData["listadoDeGeneros"] as SelectList,"Seleccionar un Genero", new {@class="form-control"})
+                    @Html.DropDownList("idGenero", ViewData["listadoDeGeneros"] as SelectList,"Seleccionar un Genero", new {@class="form-control"})
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     @Html.Label("lblCasos","Casos Confirmados")
                 </div>
                 <div>
-                    @Html.TextBox("confirmados","", new {@class="form-control"})
+                    <input type="number" name="confirmados" class="col-sm-12"/>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -46,7 +46,7 @@
                     @Html.Label("lblRecuperados","Numero de Recuperados")
                 </div>
                 <div>
-                    @Html.TextBox("recuperados","", new {@class="form-control"})
+                    <input type="number" name="recuperados" class="col-sm-12" />
                 </div>
             </div>
             <div class="col-sm-4">
@@ -54,7 +54,7 @@
                     @Html.Label("lblFallecidos","Numero de Fallecidos")
                 </div>
                 <div>
-                    @Html.TextBox("fallecidos","", new {@class="form-control"})
+                    <input type="number" name="fallecidos" class="col-sm-12" />
                 </div>
             </div>
         </div>
