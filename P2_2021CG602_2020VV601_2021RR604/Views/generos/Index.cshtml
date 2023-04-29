@@ -1,0 +1,35 @@
+﻿@model IEnumerable<P2_2021CG602_2020VV601_2021RR604.Models.generos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreGenero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreGenero)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idGenero">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idGenero">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idGenero">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
