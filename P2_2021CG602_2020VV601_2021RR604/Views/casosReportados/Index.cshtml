@@ -3,5 +3,36 @@
 *@
 @{
 }
-<h1>Registros de Covid</h1>
-<h3>El siguiente formulario es para lelvar el registro de casos reportados de Covid por departamento y genero.</h3>
+<div class="m-0 row justify-content-center bg-light">
+    <div class="col-auto p-5 text-center">
+        <h1 class="text-dark">Registros de Covid</h1>
+        <br>
+        <p class="text-secondary">El siguiente formulario es para lelvar el registro de casos reportados de Covid por departamento y genero.</p>
+    </div>
+    <h5 class="text-dark">Reportar casos</h5>
+    <form>
+        @*Inicio del formulario*@
+        <div class="form-group row mb-4">
+            <div class="col-sm-6">
+                <div >
+                    @Html.Label("lblDepartamento","Departamento")
+                </div>
+                <div>
+                    @Html.DropDownList("idDepartamento", ViewData["listadoDeDepartamentos"] as SelectList,"Seleccionar un departamento", new {@class="form-control"})
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    @Html.Label("lblGenero","Descripcion")
+                </div>
+                <div>
+                    @Html.DropDownList("idDepartamento", ViewData["listadoDeGeneros"] as SelectList,"Seleccionar un Genero", new {@class="form-control"})
+                </div>
+            </div>
+
+        </div>
+        @*Fin del formulario*@
+    </form>
+
+</div>
+
