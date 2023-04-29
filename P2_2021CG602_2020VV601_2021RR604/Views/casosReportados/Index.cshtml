@@ -14,7 +14,7 @@
         @*Inicio del formulario*@
         <div class="form-group row mb-4">
             <div class="col-sm-6">
-                <div >
+                <div>
                     @Html.Label("lblDepartamento","Departamento")
                 </div>
                 <div>
@@ -29,10 +29,53 @@
                     @Html.DropDownList("idDepartamento", ViewData["listadoDeGeneros"] as SelectList,"Seleccionar un Genero", new {@class="form-control"})
                 </div>
             </div>
-
         </div>
         @*Fin del formulario*@
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Departamentos
+                    </th>
+                    <th>
+                        Genero
+                    </th>
+                    <th>
+                        Confirmados
+                    </th>
+                    <th>
+                        Recuperados
+                    </th>
+                    <th>
+                        Fallecidos
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var casos in (IEnumerable<dynamic>)ViewData["listadoCasos"])
+                {<tr>
+                 <td>
+                        @casos.departamento
+                </td>
+                <td>
+                        @casos.genero
+                </td>
+                <td>
+                        @casos.confirmados
+                </td>
+                <td>
+                        @casos.recuperados
+                </td>
+                <td>
+                        @casos.fallecidos
+                </td>
+                </tr>
+
+                }
+            </tbody>
+        </table>
     </form>
 
-</div>
 
+</div>

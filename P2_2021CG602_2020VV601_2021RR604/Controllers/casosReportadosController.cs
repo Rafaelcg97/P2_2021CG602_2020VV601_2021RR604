@@ -20,6 +20,22 @@ namespace P2_2021CG602_2020VV601_2021RR604.Controllers
             var listaDeGeneros = (from m in _parcialBDContext.generos select m).ToList();
             ViewData["listadoDeGeneros"] = new SelectList(listaDeGeneros, "idGenero", "nombreGenero");
 
+
+            var listaCasos = (from c in _parcialBDContext.casosReportados
+                                  join g in _parcialBDContext.generos
+                                  on c.idGenero equals g.idGenero
+                                  join d in _parcialBDContext.departamentos
+                                  on c.idDepartamento equals d.idDepartamento
+                                  select new
+                                  {
+                                      departamento=d.nombreDepartamento,
+                                      genero = g.nombreGenero,
+                                      confirmados = c.confirmados,
+                                      recuperados = c.recuperados,
+                                      fallecidos = c.fallecidos
+                                  }).ToList();
+            ViewData["listadoCasos"] = listaCasos;
+
             return View();
         }
     }
